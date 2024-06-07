@@ -66,6 +66,13 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      
+      - name: Run Prettier
+        run: yarn prettier --write .
+
+      - name: Run ESLint
+        run: yarn eslint --fix .
+        
       - name: Build project assets
         run: ${{ steps.detect-package-manager.outputs.manager }} build
       - name: Upload artifact
