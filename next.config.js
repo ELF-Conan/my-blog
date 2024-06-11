@@ -82,19 +82,6 @@ module.exports = () => {
         },
       ]
     },
-    exportPathMap: async function (
-      defaultPathMap,
-      { dev, dir, outDir, distDir, buildId }
-    ) {
-      return {
-        '/': { page: '/' },
-        '/about': { page: '/about' },
-        '/blog': { page: '/blog' },
-        '/projects': { page: '/projects' },
-        '/tags': { page: '/tags' }
-        // 添加更多路径
-      }
-    },
     webpack: (config, options) => {
       config.module.rules.push({
         test: /\.svg$/,
