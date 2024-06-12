@@ -63,7 +63,7 @@ module.exports = () => {
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
-      dirs: ['app', 'components', 'layouts', 'scripts', 'out'],
+      dirs: ['app', 'components', 'layouts', 'scripts'],
     },
     images: {
       remotePatterns: [
@@ -82,6 +82,7 @@ module.exports = () => {
         },
       ]
     },
+    output: 'export',
     webpack: (config, options) => {
       config.module.rules.push({
         test: /\.svg$/,
